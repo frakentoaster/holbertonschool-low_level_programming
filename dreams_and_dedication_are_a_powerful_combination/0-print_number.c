@@ -1,10 +1,10 @@
 #include "my_functions.h"
-#include <stdio.h>
 
 int myPow(int power)
 {
-  int result;
   int i;
+  int result;
+  result = 1;
 
   for (i = 0; i < power; i++)
   {
@@ -15,28 +15,31 @@ int myPow(int power)
 
 void print_number(int n)
 {
-  int len = 1;
-  int p;
-  int x;
-  p = len-1;
+  int len;
+  int power;
+  int num;
+  int temp;
 
+  len = 1;
   if (n < 0)
-    {
+  {
       print_char(45);
-      n = (n*-1);
-    }
-  
-  while (n > 9)
-    {
-      len++;
-      n/=10;
-    }
-  
-  while (p >= 0)
-    {
-      x = n / myPow(p);
-      n = n - x * myPow(p);
-      print_char(x + 48);
-      p--;
-    }
+      n = (n * -1);
+  }
+  temp = n;
+
+  while (temp > 9)
+  {
+      len++; 
+      temp /= 10;
+  }
+  power = len-1;
+
+  while (power >= 0)
+  {
+    num = n / myPow(power);
+    n = n - num * myPow(power);
+    print_char(num + 48);
+    power--;
+  }
 }
