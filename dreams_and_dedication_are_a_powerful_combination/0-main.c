@@ -2,6 +2,7 @@
 
 int main(void)
 {
+
   print_number(98);
   print_char('\n');
   print_number(402);
@@ -12,5 +13,11 @@ int main(void)
   print_char('\n');
   print_number(-98);
   print_char('\n');
-  return (0);
+  print_number(-44498);
+  print_char('\n');
+  print_number(-980);
+  print_char('\n');
+  print_number(-198);
+  print_char('\n');
+   return (0);
 }
