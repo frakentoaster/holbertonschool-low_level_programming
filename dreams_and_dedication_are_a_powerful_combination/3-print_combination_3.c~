@@ -1,0 +1,33 @@
+#include "my_functions.h"
+
+void print_combination_3(void)
+{
+  int h;
+  for (h = 48; h < 58; h++)
+    {
+      int i;
+
+      for (i = 49; i < 58; i++) /* Outer loop to print tens place */
+	{
+	  int j;
+	  /* Inner loop to print ones place */
+	  for (j = i + 1; j < 58; j++)
+	    {
+	      if (h == i || h == j || i == j)
+		{}
+	      else {
+		print_char(h);
+		print_char(i);
+		print_char(j);
+		/* Skip printing "," and space if last char (89) */
+		if (h == 56 && i == 57)
+		  {}
+		else {
+		  print_char(44);
+		  print_char(32);
+		}
+	      }
+	    }
+	}
+    }
+}
