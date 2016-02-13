@@ -19,7 +19,7 @@ int main(void)
   print_char('\n');
   print_number(-198);
   print_char('\n');
-  print_number(-2147483647);
+  print_number(2147483647);
   print_char('\n');
   print_number(-2147483648);
   print_char('\n');

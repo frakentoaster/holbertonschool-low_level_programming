@@ -1,17 +1,17 @@
 #include "my_functions.h"
 
 void int_min(){ /* Function to handle int min */
-  print_char(45);
-  print_char(50);
-  print_char(49);
-  print_char(52);
-  print_char(55);
-  print_char(52);
-  print_char(56);
-  print_char(51);
-  print_char(54);
-  print_char(52);
-  print_char(56);
+  print_char('-');
+  print_char('2');
+  print_char('1');
+  print_char('4');
+  print_char('7');
+  print_char('4');
+  print_char('8');
+  print_char('3');
+  print_char('6');
+  print_char('4');
+  print_char('8');
 }
 
 int myPow(int power){ /* Function to calculate exponents */
