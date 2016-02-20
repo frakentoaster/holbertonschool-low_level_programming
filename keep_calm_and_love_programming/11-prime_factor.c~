@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main(void)
+{
+  int count;
+  int prime;
+  unsigned long int num, i;
+  num = 612852475143;
+  for (i = 2; i <= num; i++)
+    {
+      if (num % i == 0)
+	{
+	  count++;
+	  prime = i;
+	}
+      if (count > 2)
+	{
+	  continue;
+	}
+    }
+  printf("%d", prime);
+  return 0;
+}
