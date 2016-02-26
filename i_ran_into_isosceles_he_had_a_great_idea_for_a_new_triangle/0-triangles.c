@@ -12,13 +12,13 @@ void triangles_in_the_term(int h, int n)
       for (row = 0; row <= h-1; row++)
         {
           /* Print spaces */
-          for (spaces = 0; spaces < (h-row); spaces++)
-            {
+          for (spaces = 0; spaces < (h-row-1); spaces++)
+            { 
               printf(" ");
             }
 
           /* Print asterisks */
-          for (stars = 0; stars < (h*2-spaces); stars++)
+          for (stars = 1; stars < (h-spaces)*2; stars++)
             {
               printf("*");
             }
