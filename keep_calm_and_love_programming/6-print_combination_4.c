@@ -1,7 +1,5 @@
 #include "my_functions.h"
 
-#include <stdio.h>
-
 void print_combination_4(void)
 {
   int n;
