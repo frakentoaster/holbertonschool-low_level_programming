@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+void triangles_in_the_term(int h, int n)
+{
+  int space, star, row, i, j;
+  star = 1;
+  space = h/2 - star;
+  /* Execute code only if height > 0 */
+  if (h > 0 && n > 0)
+    {
+      for (row = 0; row <= h; row++)
+	{
+	  for (i = 1; i < space; i++)
+	    {
+	      printf(" ");
+	    } 
+	  for (j = 0; j <= star; j++)
+	    {
+	      printf("*");
+	    }
+	  printf("\n");
+	}
+    }
+}
