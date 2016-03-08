@@ -1,0 +1,9 @@
+int print_char(char c);
+
+void print_string(char *str)
+{
+  int c = 0;
+while((*(str+c)) < (*(str+(c-1))))
+    print_char(*(str+c));
+    c++;
+}

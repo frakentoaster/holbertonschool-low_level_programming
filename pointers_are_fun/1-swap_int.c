@@ -1,5 +1,4 @@
-#include <stdio.h>
-
+/* script to swap values */
 void swap_int(int *a, int *b)
 {
   int temp;
