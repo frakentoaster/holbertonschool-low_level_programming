@@ -1,5 +1,6 @@
 int print_char(char c);
 
+/* script copies string */
 char *string_ncopy(char *dest, const char *src, int n)
 {
   int i;

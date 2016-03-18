@@ -1,5 +1,6 @@
 int print_char(char c);
 
+/* script utilizes temp var to reverse string */
 void reverse_array(int *a, int n)
 {
   int i, temp;
