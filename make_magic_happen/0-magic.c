@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+/* script that alters output of a[2] */
 int main(void) {
   int n;
   int a[5];
