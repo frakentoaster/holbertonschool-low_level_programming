@@ -1,6 +1,5 @@
-char *leet(char *c) {
+char *leet(char *c) { /* loop to end of string replacing specific occurrences */
 	int i;
-	/* loop to end of string replacing specific occurrences */
 	for (i = 0; c[i] != '\0'; i++) {
 		switch(c[i]) {
 			case 'a' :
@@ -22,8 +21,5 @@ char *leet(char *c) {
 			case 'l' :
 			case 'L' :
 				c[i] = '1';
-				break;
-		}
-	}
-	return c;
-}
+				break;}}
+	return c;}
