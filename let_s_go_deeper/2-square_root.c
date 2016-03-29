@@ -1,7 +1,7 @@
-/* recursive script to calculate sq roots */
+/* recursive function to calculate sq roots */
 int calc_sq(int n, int c) {
   /* return sq root when found */
-  if (c * c == n){
+  if (c * c == n) {
     return c;
   }
   /* -1 if not valid sq root */
