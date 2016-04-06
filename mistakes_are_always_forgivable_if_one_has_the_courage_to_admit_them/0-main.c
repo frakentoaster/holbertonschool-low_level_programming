@@ -3,7 +3,7 @@ void array_iterator(int *, int, void (*)(int));
 
 void action(int elem)
 {
-  printf(“%d\n”, elem);
+  printf("%d\n", elem);
 }
 
 int main(void)
