@@ -1,18 +1,24 @@
 #include <stdlib.h>
-char *string_dup(char *str) {
 
+/* function that returns string given as arg */
+char *string_dup(char *str) {
   char *dest;
   int i;
-  dest = 
-  str = malloc(sizeof(*str) * 3);
-  if (str == NULL) {
-    return NULL;
+  i = 0;
+
+  /* get length */
+  while (str[i] != '\0') {
+    i++;
   }
+  dest = malloc(sizeof(char) * i);
+
+  if (dest == NULL) {
+    return (NULL);
+  }
+
   for (i = 0; str[i] != '\0'; i++) {
     dest[i] = str[i];
   }
   dest[i] = '\0';
-
-  return dest;
-
+  return (dest);
 }
