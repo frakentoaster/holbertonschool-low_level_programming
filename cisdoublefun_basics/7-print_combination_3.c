@@ -1,3 +1,4 @@
+int print_char(char c);
 void print_combination_3(void)
 {
   int h;
