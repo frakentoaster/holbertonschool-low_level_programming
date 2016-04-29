@@ -1,8 +1,5 @@
-/* iterative function to calculate factorial */
+/* recursive function to calculate factorial */
 int factorial(int n) {
-	int i;
-	int res;
-	i = 1;
 	/* handle negative & INT_MAX/MIN edge cases */
 	if (n < 0 || n > 2147483647) {
 		return (-1);
@@ -11,11 +8,6 @@ int factorial(int n) {
 		return (1);
 	}
 	else {
-		res = 1;
-		while (i < n) {
-			res *= i;
-			i++;
-		}
-		return (res);
+		return (n * factorial(n - 1));
 	}
 }
