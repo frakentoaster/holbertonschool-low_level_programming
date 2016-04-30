@@ -8,7 +8,6 @@ int calc_sq(int n, int c) {
 		c++;
 	}
 	return (-1);
-  /* call self, increasing count(c) until a prev conditional met */
 }
 /* calls calc_sq fn passing in 1 as counter */
 int square_root(int n) {
