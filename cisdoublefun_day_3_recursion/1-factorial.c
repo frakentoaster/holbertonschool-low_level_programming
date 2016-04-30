@@ -1,5 +1,3 @@
-#include <limits.h>
-
 /* recursive function to calculate factorial */
 int factorial(int n) {
 	/* handles integer overflow (MAX & MIN) */

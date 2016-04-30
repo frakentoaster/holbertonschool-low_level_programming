@@ -17,5 +17,7 @@ int main(void)
   printf("%d\n", r);
   r = power(-5, 3);
   printf("%d\n", r);
+  r = power(1024, 100);
+  printf("%d\n", r);
   return (0);
 }
