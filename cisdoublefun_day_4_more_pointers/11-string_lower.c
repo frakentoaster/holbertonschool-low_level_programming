@@ -1,8 +1,13 @@
-int string_digit(char *s) {
+int string_lower(char *s) {
 	int i,r, count, length;
 	i = 0;
 	r = 0;
 	length = 0;
+
+	/* check for empty string */
+	if (s[i] == 32) {
+		return 1;
+	}
 
 	while (s[r] != '\0') {
 		length++;

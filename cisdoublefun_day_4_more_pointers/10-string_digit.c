@@ -4,6 +4,11 @@ int string_digit(char *s) {
 	r = 0;
 	length = 0;
 
+	/* check for empty string */
+	if (s[i] == 32) {
+		return 1;
+	}
+
 	while (s[r] != '\0') {
 		length++;
 		r++;
@@ -12,7 +17,7 @@ int string_digit(char *s) {
 	count = 0;
 	/* loop til end of string */
 	while (s[i] != '\0') {
-	  /* If char is within range of lowercase on ascii table */
+	  /* If char is within range of digits on ascii table */
 		if (s[i] <= '9' && s[i] >= '0') {
 			count += 1;
 		}

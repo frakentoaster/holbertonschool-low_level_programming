@@ -15,9 +15,13 @@ int main(void)
 	printf("%d\n", p);
 	p = string_alpha(" ");
 	printf("%d\n", p);
+	p = string_alpha("");
+	printf("%d\n", p);
 	p = string_alpha("level's");
 	printf("%d\n", p);
 	p = string_alpha("lafdfkajhsdkfjahAFDAWRGA");
+	printf("%d\n", p);
+	p = string_alpha("AFDAWRGA");
 	printf("%d\n", p);
 	return (0);
 }

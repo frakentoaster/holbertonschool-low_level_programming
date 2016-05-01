@@ -1,4 +1,4 @@
-int string_alpha(char *s) {
+int string_upper(char *s) {
 	int i,r, count, length;
 	i = 0;
 	r = 0;
@@ -17,8 +17,8 @@ int string_alpha(char *s) {
 	count = 0;
 	/* loop til end of string */
 	while (s[i] != '\0') {
-	  /* If char is within range of alphanumeric chars on ascii table */
-		if ((s[i] <= 'z' && s[i] >= 'a') || (s[i] <= 'Z' && s[i] >= 'A')) {
+	  /* If char is within range of uppercase on ascii table */
+		if (s[i] <= 'Z' && s[i] >= 'A') {
 			count += 1;
 		}
 		else {
