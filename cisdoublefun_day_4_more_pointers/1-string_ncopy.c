@@ -1,17 +1,17 @@
 int print_char(char c);
 
 /* script copies string */
-char *string_ncopy(char *dest, const char *src, int n)
-{
+char *string_ncopy(char *dest, const char *src, int n) {
   int i;
+	i = 0;
 
-  for (i = 0; i < n && src[i] != '\0'; i++)
-  {
+  while (i < n && src[i] != '\0') {
     dest[i] = src[i];
+		i++;
   }
-  for ( ; i < n; i++)
-  {
+  while (i < n) {
     dest[i] = '\0';
+		i++;
   }
   return dest;
 }

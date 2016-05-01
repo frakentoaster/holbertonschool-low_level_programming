@@ -1,26 +1,24 @@
 /* finds length of string */
-int str_len(char *str)
-{
+int str_len(char *str) {
   int c = 0;
-  while(*(str+c))
-    {
-      c++;
-    }
+  while(*(str+c)) {
+    c++;
+  }
   return c;
 }
 
 /* reverses string outputting result */
-char *rev_string(char *s)
-{
+char *rev_string(char *s) {
   int i,length;
   char temp;
   length = str_len(s);
+	i = 0;
 
-  for (i = 0; i < length/2; i++)
-    {
-      temp = *(s + i);
-      *(s + i) = *(s + length - 1 - i);
-      *(s + length - 1 - i) = temp;
-    }
-		return (s);
+  while (i < length/2) {
+    temp = *(s + i);
+    *(s + i) = *(s + length - 1 - i);
+    *(s + length - 1 - i) = temp;
+		i++;
+  }
+	return (s);
 }
