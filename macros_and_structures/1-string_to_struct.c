@@ -1,8 +1,8 @@
+/* Takes a string and copies it to new_str with length */
 #include <stdlib.h>
 #include "str_struct.h"
 
-struct String *string_to_struct(char *str)
-{
+struct String *string_to_struct(char *str) {
 	struct String *new_str;
 	int i;
 
