@@ -5,56 +5,49 @@
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <signal.h>
 
 #define EXIT_FAILURE 1
 #define EXIT_SUCCESS 0
 
-int string_len(char *s) {
+void print_prompt(void) {
+	char *s;
 	int l;
+	s = "Koopa$ ";
 	l = 0;
+
 	while (s[l]) {
 		l++;
 	}
-	return (l);
+	write(1, s, l);
 }
 
-void print_string(char *s) {
-	write(1, s, string_len(s));
-}
-
-void print_prompt(void) {
-	print_string("Koopa$ ");
-}
-
-int print_char(char c)
-{
+int print_char(char c) {
   return (write(1, &c, 1));
 }
 
-int main(int ac, char **av, char **env) {
+int main() {
 	char *command;
 	char **argv;
-	pid_t id;
+	pid_t pid;
 	int status;
-	int num;
 	int st_cmd;
+	int exstat;
+	char *env[] = {NULL,0};
 
-	while (1) { /* Infinite loop til exit */
+	/* Infinite loop til exit */
+	while (1) {
 		print_prompt();
 		command = read_line(0);
 		st_cmd = strcmp("echo $?", command);
-
-		/* Check for exit command */
-		if (strcmp("exit", command) == 0) {
-			return (0);
-		}
-
+		/* Print return status */
 		if (st_cmd == 0) {
-			printf("EXIT CODE YO! %d\n", WEXITSTATUS(status));
+			print_char(exstat + 48);
+			print_char('\n');
 		}
 		argv = string_split(command, ' ');
 
-		/* Set PATH based on user input */
+		/* Check for builtin commands and Set PATH accordingly */
 		if (strcmp("ls", command) == 0) {
 			argv[0] = "/bin/ls";
 		}
@@ -62,31 +55,33 @@ int main(int ac, char **av, char **env) {
 		if (strcmp("env", argv[0]) == 0) {
 			argv[0] = "/usr/bin/env";
 		}
-		/* Handles echo commands */
-		if (strcmp("echo", argv[0]) == 0) {
+
+		/* Ignore if echo $? */
+		if (strcmp("echo", argv[0]) == 0 && st_cmd != 0) {
 			argv[0] = "/bin/echo";
 		}
-//////////////////////////// TO DO //////////////////////////
-/* kill off multiple child shells after calling.(prevents exit) */
-/* dynamically pass in path and commands by parsing command line args */
-
-		/*int r = 0;
-		while (argv[r] != '\0'){
-			print_string(*env);
-			r++;
-		}*/
-
-		id = fork();
 		/* Fork so doesn't end after first execve */
-		if (id == 0 && st_cmd != 0) { /* Execute inside child */
+		pid = fork();
+		/* Check for exit command */
+		if (strcmp("exit", command) == 0) {
+			exit(EXIT_SUCCESS);
+		}
+		/* Execute inside child */
+		if (pid == 0) {
 			execve(argv[0], argv, env);
-			perror("Execve Failure"); /* Execve only returns on failure */
+			/* Execve only returns on failure */
+			if (st_cmd != 0) {
+				perror("Execve Failure");
+				return (1);
+			}
+			return (1);
 			exit(EXIT_FAILURE);
-		} else if (id == -1){
+		} else if (pid == -1) {
 			perror("Fork Failure");
 			exit(EXIT_FAILURE);
 		} else {
 			wait(&status);
+			exstat = WEXITSTATUS(status);
 		}
 	}
 	return (0);
