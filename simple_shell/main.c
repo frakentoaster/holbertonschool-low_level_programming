@@ -49,7 +49,7 @@ int main(int ac, char **argv, char **env) {
 		cmd = args[0];
 
 		if (strcmp("echo", command) == 0) {
-			printf(WEXITSTATUS(status));
+			printf("%d\n",WEXITSTATUS(status));
 		}
 		free(command);
 		if (strcmp("ls", args[0]) == 0)	{	/* Set PATH based on user input */
