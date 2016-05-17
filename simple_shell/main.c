@@ -45,10 +45,14 @@ int main(int ac, char **argv, char **env) {
 		print_prompt();
 		command = read_line(0);
 		/*st_call = strcmp("echo $?", command); */
-		args = string_split(command, ' ');
+		if (command[4] == 32) {
+			args = string_split(command, '\n');
+		} else {
+			args = string_split(command, ' ');
+		}
 		cmd = args[0];
 
-		if (strcmp("echo", command) == 0) {
+		if (strcmp("echo $?", command) == 0) {
 			printf("%d\n",WEXITSTATUS(status));
 		}
 		free(command);
@@ -67,7 +71,7 @@ int main(int ac, char **argv, char **env) {
 		pid = fork(); 		/* Fork so doesn't end after first execve */
 		if (pid == 0) { /* Execute inside child */
 			execve(args[0], argv, env);
-			if (strcmp("echo", args[0]) != 0) {
+			if (strcmp("echo ?", args[0]) != 0) {
 				perror("Execve Failure"); /* Execve only returns on failure */
 			}
 			free(args);
@@ -79,7 +83,7 @@ int main(int ac, char **argv, char **env) {
 		} else {
 			wait(&status);
 		}
-		if (strcmp("echo", args[0]) == 0) {
+		if (strcmp("echo ?", args[0]) == 0) {
 			free_everything(args);
 		} else {
 			free(cmd);
