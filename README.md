@@ -1,4 +1,4 @@
-# Covering Computer Science basics using C at Holberton School.
+# Computer Science basics in C at Holberton School.
 
 This repo contains code from our low-level programming track at Holberton School. Many restraints are placed on the use of libraries. While challenging, it really pushed us to learn the inner working of many functions we often take advantage of.
 
