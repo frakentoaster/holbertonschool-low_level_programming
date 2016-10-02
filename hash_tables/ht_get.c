@@ -1,5 +1,6 @@
 #include "hashtable.h"
 #include <stdio.h>
+
 unsigned int hash(const char *key, unsigned int size);
 int str_cmp(const char *str1, const char* str2);
 
