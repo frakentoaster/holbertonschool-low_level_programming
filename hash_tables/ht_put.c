@@ -1,7 +1,6 @@
 #include "hashtable.h"
 #include <stdlib.h>
 #include <string.h>
-unsigned int hash(const char *key, unsigned int size);
 
 /* Compares two strings */
 int str_cmp(const char *str1, const char* str2)
