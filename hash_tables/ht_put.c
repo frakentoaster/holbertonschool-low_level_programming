@@ -39,16 +39,18 @@ int ht_put(HashTable *hashtable, const char *key, const char *value) {
     }
   }
   /*
-    1. Check if node already exists and free allocated space
-    2. If doesn't exist, allocate memory for node.
-    3. Set corresponding key, value pairs.
-    4. Check for issues with malloc or key, val pairs.
-    5. Free allocated space if step 4 fails and return 1.
-    6. All the above passes, we set value for node->next.
-    7. Set the node as the new head node.
+    1. Check if node already exists and free allocated space.
+    2. Update existing node's value.
+    3. If doesn't exist, allocate memory for node.
+    4. Set corresponding key, value pairs.
+    5. Check for issues with malloc or key, val pairs.
+    6. Free allocated space if step 4 fails and return 1.
+    7. All the above passes, we set value for node->next.
+    8. Set the node as the new head node.
   */
   if (node != NULL) {
     free(node->value);
+    node->value = strdup(value);
   } else {
     node = malloc(sizeof(List));
     node->key = strdup(key);
