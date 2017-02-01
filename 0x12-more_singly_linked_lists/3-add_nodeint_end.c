@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include "lists.h"
 /**
- * add_nodeint - Adds a new node to the end of a linked list.
+ * add_nodeint_end - Adds a new node to the end of a linked list.
  * @head: pointer to head node pointer
  * @n: new node value
  *
