@@ -8,19 +8,19 @@
  *
  * Return: the sum of all node's data.
  */
-	int sum_listint(listint_t *head)
-	{
-		unsigned int i;
+int sum_listint(listint_t *head)
+{
+	unsigned int i;
 
-		i = 0;
-		if (head == NULL)
-		{
-			return (0);
-		}
-		while (head != NULL)
-		{
-			i += head->n;
-			head = head->next;
+	i = 0;
+	if (head == NULL)
+	{
+		return (0);
 	}
-	return (i);
+	while (head != NULL)
+	{
+		i += head->n;
+		head = head->next;
 	}
+return (i);
+}
