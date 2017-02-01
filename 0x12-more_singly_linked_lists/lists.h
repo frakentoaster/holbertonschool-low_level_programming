@@ -13,7 +13,6 @@ typedef struct listint_s
 		int n;
 		struct listint_s *next;
 } listint_t;
-
 /* Function prints all elements of listint_t list */
 size_t print_listint(const listint_t *h);
 /* Function returns number of elements of listint_t list */
@@ -26,4 +25,6 @@ listint_t *add_nodeint_end(listint_t **head, const int n);
 void free_listint(listint_t *head);
 /* Function that frees listint_t list memory and sets head to NULL */
 void free_listint2(listint_t **head);
+/* Function that deletes head node of listint_t linked list */
+int pop_listint(listint_t **head);
 #endif
