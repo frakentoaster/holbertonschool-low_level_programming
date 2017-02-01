@@ -4,7 +4,7 @@
 #include "lists.h"
 /**
  * free_listint - Frees all blocks used in listint_t list.
- * @head: head node pointer
+ * @head: pointer to head node
  *
  * Description: Iterates a linked list freeing each block.
  */
