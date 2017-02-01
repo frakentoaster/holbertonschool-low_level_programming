@@ -5,6 +5,7 @@
 /**
  * get_nodeint_at_index - Removes nth node in listint_t list.
  * @head: pointer to head node
+ * @index: index of node of interest
  *
  * Return: nth node, given an index, or NULL.
  */
