@@ -22,4 +22,6 @@ size_t listint_len(const listint_t *h);
 listint_t *add_nodeint(listint_t **head, const int n);
 /* Function adds a new node at the end of listint_t list */
 listint_t *add_nodeint_end(listint_t **head, const int n);
+/* Function that frees listint_t list memory */
+void free_listint(listint_t *head);
 #endif
