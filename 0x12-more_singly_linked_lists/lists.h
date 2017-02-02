@@ -33,4 +33,6 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index);
 int sum_listint(listint_t *head);
 /* Function that inserts a new node at given index in listint_t linked list */
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int index, int n);
+/* Function that deletes a node from a given index in listint_t linked list */
+int delete_nodeint_at_index(listint_t **head, unsigned int index);
 #endif
