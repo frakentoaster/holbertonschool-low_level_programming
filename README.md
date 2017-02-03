@@ -1,6 +1,6 @@
 # Computer Science Fundamentals in C.
 
-This repo contains code from our low-level programming track at Holberton School. Many restraints are placed on the use of libraries. While challenging, it really pushed us to learn the inner working of many functions we often take advantage of.
+This repo contains code from our low-level programming track at Holberton School. As usual, we are given no prior instruction and the only assistance given is the gift of internet and Google. Many restraints are placed on the use of libraries as well. While challenging, this type of restraint is really helpful in learning the inner working of many functions.
 
 ## A Few Topics Covered:
 
