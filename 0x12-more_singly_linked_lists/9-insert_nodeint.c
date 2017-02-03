@@ -1,4 +1,6 @@
 #include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
 #include "lists.h"
 /**
  * insert_nodeint_at_index - Inserts a node at a given index in linked list.
@@ -32,6 +34,12 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int index, int n)
 				return (NULL);
 			}
 			current_node = current_node->next;
+		}
+		if (current_node->next == NULL)
+		{
+			new_node->n = n;
+			current_node->next = new_node;
+			return (new_node);
 		}
 		new_node->n = n;
 		new_node->next = current_node->next;
