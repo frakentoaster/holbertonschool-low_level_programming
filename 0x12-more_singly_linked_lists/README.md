@@ -1,4 +1,4 @@
-# Singly Linked Lists.
+# Singly Linked Lists
 
 The goal of this project is to develop a deep understanding of linked lists, pointers, referencing, dereferencing, allocating, and freeing memory. We are instructed to write code using [Betty's style](https://github.com/holbertonschool/Betty/wiki).
 
