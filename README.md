@@ -4,13 +4,13 @@ This repo contains code from our low-level programming track at Holberton School
 
 ## A Few Topics Covered:
 
-1. Pointers
-1. File Descriptors
-1. Hash Tables
-1. Recursion
-1. Macros
-1. Structures
-1. Memory Allocation
-1. Makefiles
-1. Debugging
-1. Many Algorithms
+* Pointers
+* File Descriptors
+* Hash Tables
+* Recursion
+* Macros
+* Structures
+* Memory Allocation
+* Makefiles
+* Debugging
+* Many Algorithms
